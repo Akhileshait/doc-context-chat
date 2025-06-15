@@ -53,7 +53,7 @@ app.post("/upload/pdf", upload.single("pdf"), (req, res) => {
 });
 
 app.get("/chat", async (req, res) => {
-  const userQuery = "What is react in detail?";
+  const userQuery = req.query.message;
 
   const embeddings = new GoogleGenerativeAIEmbeddings({
     model: "text-embedding-004", // 768 dimensions
